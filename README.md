@@ -21,3 +21,5 @@ npm ci
 ```
 npm link
 ```
+## Example of work
+[![asciicast](https://asciinema.org/a/q2U9ptgviLjsgi4s5Zvin0h8X.svg)](https://asciinema.org/a/q2U9ptgviLjsgi4s5Zvin0h8X)
