@@ -1,0 +1,9 @@
+
+#Name of workflow
+name: 'linter and tests.'
+
+#Trigger the workflow on push or pull request
+on:
+  - push
+env:
+  CI: true
