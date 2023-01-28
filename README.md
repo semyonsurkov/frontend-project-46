@@ -1,5 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/semyonsurkov/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/semyonsurkov/frontend-project-46/actions)
+<a href="https://codeclimate.com/github/semyonsurkov/frontend-project-46/maintainability"><img src="https://api.codeclimate.com/v1/badges/9b9ab012bf795722fb88/maintainability" /></a>
+<a href="https://codeclimate.com/github/semyonsurkov/frontend-project-46/test_coverage"><img src="https://api.codeclimate.com/v1/badges/9b9ab012bf795722fb88/test_coverage" /></a>
 
 ## Description 
 This project is a generator of differences between two files in different formats, such as: json, yaml, yml and ini. It can also be used as a library or a script in your project. This is a popular task for which there are many online services, such as http://www.jsondiff.com/.
