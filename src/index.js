@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { extname, resolve } from 'path';
 import process from 'process';
 import _ from 'lodash';
-import parse from './parser.js';
+import parse from './parsers.js';
 
 const prepareData = (filepath) => {
   const type = extname(filepath).slice(1);
