@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFixtureFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
-const cases = ['json', 'yml'];
+const cases = ['json', 'yml', 'yaml'];
 const expectedOutput = readFixtureFile('rightjson.txt');
 
 describe('genDiff', () => {
