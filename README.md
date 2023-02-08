@@ -24,5 +24,8 @@ npm ci
 ```
 npm link
 ```
-## Example of work
+## Сompare two flat json
 [![asciicast](https://asciinema.org/a/q2U9ptgviLjsgi4s5Zvin0h8X.svg)](https://asciinema.org/a/q2U9ptgviLjsgi4s5Zvin0h8X)
+
+## Сompare two flat yml/yaml
+[![asciicast](https://asciinema.org/a/558223.svg)](https://asciinema.org/a/558223)
