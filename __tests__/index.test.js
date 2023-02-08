@@ -14,8 +14,8 @@ const expectedOutput = readFixtureFile('rightjson.txt');
 
 describe('genDiff', () => {
   test.each(cases)('Compare format %s', (format) => {
-    const filepath1 = getFixturePath(`filepath1.${format}`);
-    const filepath2 = getFixturePath(`filepath2.${format}`);
+    const filepath1 = getFixturePath(`file1.${format}`);
+    const filepath2 = getFixturePath(`file2.${format}`);
     expect(genDiff(filepath1, filepath2)).toBe(expectedOutput);
   });
 });
