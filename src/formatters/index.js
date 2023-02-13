@@ -1,7 +1,10 @@
 import stylish from './stylish.js';
+import plain from './plain.js';
 
 const format = (tree, formatName) => {
   switch (formatName) {
+    case 'plain':
+      return plain(tree);
     case 'stylish':
       return stylish(tree);
     case 'json':
