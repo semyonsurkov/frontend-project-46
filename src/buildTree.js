@@ -1,14 +1,12 @@
 import _ from 'lodash';
 
-const isObject = (value) => typeof value === 'object' && value !== null && !Array.isArray(value);
-
-const getSortedUniqueKeys = (obj1, obj2) => {
-  const keys1 = Object.keys(obj1);
-  const keys2 = Object.keys(obj2);
+const getSortedUniqueKeys = (data1, data2) => {
+  const keys1 = Object.keys(data1);
+  const keys2 = Object.keys(data2 ?? {});
   return _.sortBy(_.union(keys1, keys2));
 };
 
-const buildTree = ({ data1, data2 }) => {
+const buildTree = (data1, data2) => {
   const keys = getSortedUniqueKeys(data1, data2);
   return keys.map((key) => {
     switch (true) {
@@ -24,7 +22,7 @@ const buildTree = ({ data1, data2 }) => {
           type: 'added',
           value: data2[key],
         };
-      case isObject(data1[key]) && isObject(data2[key]):
+      case _.isPlainObject(data1[key]) && _.isPlainObject(data2[key]):
         return {
           key,
           type: 'nested',
