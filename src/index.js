@@ -1,8 +1,9 @@
 import { readFileSync } from 'node:fs';
 import { extname, resolve } from 'path';
 import process from 'process';
-import _ from 'lodash';
+import buildTree from './buildTree.js';
 import parse from './parsers.js';
+import format from './formatters/index.js';
 
 const prepareData = (filepath) => {
   const type = extname(filepath).slice(1);
@@ -11,27 +12,10 @@ const prepareData = (filepath) => {
   return parse(file, type);
 };
 
-const genDiff = (filepath1, filepath2) => {
+const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const data1 = prepareData(filepath1);
   const data2 = prepareData(filepath2);
-
-  const keysData1 = Object.keys(data1);
-  const keysData2 = Object.keys(data2);
-  const generalArray = keysData1.concat(keysData2).sort();
-  const sortUniqGeneralArray = _.sortedUniq(generalArray);
-
-  const result = sortUniqGeneralArray.map((key) => {
-    if (!keysData2.includes(key)) {
-      return `  - ${key}: ${data1[key]}`;
-    }
-    if (!keysData1.includes(key)) {
-      return `  + ${key}: ${data2[key]}`;
-    }
-    if (data1[key] === data2[key]) {
-      return `    ${key}: ${data1[key]}`;
-    }
-    return `  - ${key}: ${data1[key]}\n  + ${key}: ${data2[key]}`;
-  });
-  return `{\n${result.join('\n')}\n}`;
+  const differanceTree = buildTree(data1, data2);
+  return format(differanceTree, formatName);
 };
 export default genDiff;
