@@ -33,5 +33,8 @@ npm link
 ## Compare two json/yaml trees
 [![asciicast](https://asciinema.org/a/559476.svg)](https://asciinema.org/a/559476)
 
-Compare two files in plain format
+## Compare two files in plain format
 [![asciicast](https://asciinema.org/a/559484.svg)](https://asciinema.org/a/559484)
+
+## Show compare two files in json format
+[![asciicast](https://asciinema.org/a/559487.svg)](https://asciinema.org/a/559487)
