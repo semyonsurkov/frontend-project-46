@@ -29,3 +29,6 @@ npm link
 
 ## Сompare two flat yml/yaml
 [![asciicast](https://asciinema.org/a/558223.svg)](https://asciinema.org/a/558223)
+
+## Compare two json/yaml trees
+[![asciicast](https://asciinema.org/a/559476.svg)](https://asciinema.org/a/559476)
