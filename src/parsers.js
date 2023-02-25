@@ -1,13 +1,13 @@
 import { load } from 'js-yaml';
 
-export default (content, type) => {
+export default (data, type) => {
   switch (type) {
     case 'json':
-      return JSON.parse(content);
+      return JSON.parse(data);
     case 'yaml':
     case 'yml':
-      return load(content);
+      return load(data);
     default:
-      throw new Error(`UNKNOWN FORMAT: ${type}`);
+      throw new Error(`Unknown format: ${type}`);
   }
 };
