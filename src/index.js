@@ -5,11 +5,15 @@ import buildTree from './buildTree.js';
 import parse from './parsers.js';
 import format from './formatters/index.js';
 
+const getFileType = (filepath) => extname(filepath).slice(1);
+
+const getAbsoluteFilePath = (filepath) => resolve(process.cwd(), filepath);
+
 const prepareData = (filepath) => {
-  const type = extname(filepath).slice(1);
-  const formedFilePath = resolve(process.cwd(), filepath);
-  const file = readFileSync(formedFilePath, 'utf-8');
-  return parse(file, type);
+  const type = getFileType(filepath);
+  const formedFilePath = getAbsoluteFilePath(filepath);
+  const data = readFileSync(formedFilePath, 'utf-8');
+  return parse(data, type);
 };
 
 const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
