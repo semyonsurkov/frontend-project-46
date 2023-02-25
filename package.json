@@ -11,6 +11,9 @@
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21"
   },
+  "scripts": {
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/semyonsurkov/frontend-project-46.git"
