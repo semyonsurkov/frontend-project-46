@@ -11,17 +11,17 @@ const indent = (depth, isFull = true) => {
     : space.repeat(indentSize - signSpace);
 };
 
-const stringify = (data, depth) => {
-  if (!_.isObject(data)) {
-    return String(data);
+const stringify = (value, depth) => {
+  if (!_.isObject(value)) {
+    return String(value);
   }
-  const lines = Object.entries(data).map(
-    ([key, value]) => `${indent(depth + 1)}${key}: ${stringify(value, depth + 1)}`,
+  const lines = Object.entries(value).map(
+    ([key, val]) => `${indent(depth + 1)}${key}: ${stringify(val, depth + 1)}`,
   );
   return `{\n${lines.join('\n')}\n${indent(depth)}}`;
 };
 
-const iter = (data, depth = 1) => data.map((node) => {
+const iter = (data, depth = 1) => data.flatMap((node) => {
   switch (node.type) {
     case 'added': {
       const { key, value } = node;
@@ -45,12 +45,12 @@ const iter = (data, depth = 1) => data.map((node) => {
         value2,
         depth,
       )}`;
-      return `${line1}\n${line2}`;
+      return [line1, line2];
     }
     case 'nested': {
       const { key, children } = node;
-      const lines = iter(children, depth + 1).join('\n');
-      return `${indent(depth)}${key}: {\n${lines}\n${indent(depth)}}`;
+      const childrenTree = iter(children, depth + 1).join('\n');
+      return `${indent(depth)}${key}: {\n${childrenTree}\n${indent(depth)}}`;
     }
     default:
       throw new Error(`Node type ${node.type} is not defined`);

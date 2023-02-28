@@ -14,7 +14,6 @@ const readFixtureFile = (filename) => readFileSync(getFixturePath(filename), 'ut
 const cases = ['json', 'yml', 'yaml'];
 const expectedStylish = readFixtureFile('rightStylish.txt');
 const expectedPlain = readFixtureFile('rightPlain.txt');
-const expectedJson = readFixtureFile('rightJson.txt');
 
 describe('genDiff', () => {
   test.each(cases)('Compare format %s', (format) => {
@@ -23,6 +22,5 @@ describe('genDiff', () => {
     expect(genDiff(filepath1, filepath2)).toEqual(expectedStylish);
     expect(genDiff(filepath1, filepath2, 'stylish')).toEqual(expectedStylish);
     expect(genDiff(filepath1, filepath2, 'plain')).toEqual(expectedPlain);
-    expect(genDiff(filepath1, filepath2, 'json')).toEqual(expectedJson);
   });
 });

@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "difference calculator",
+  "description": "[![Actions Status](https://github.com/semyonsurkov/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/semyonsurkov/frontend-project-46/actions)",
   "bin": {
     "gendiff": "./bin/index.js"
   },
