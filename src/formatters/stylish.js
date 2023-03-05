@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const space = ' ';
-const spaceCount = 4;
+const spaceCounts = 4;
 const signSpace = 2;
 
 const indent = (depth, isFull = true) => {
