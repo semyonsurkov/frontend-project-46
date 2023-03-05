@@ -5,7 +5,7 @@ const spaceCounts = 4;
 const signSpace = 2;
 
 const indent = (depth, isFull = true) => {
-  const indentSize = depth * spaceCount;
+  const indentSize = depth * spaceCounts;
   return isFull
     ? space.repeat(indentSize)
     : space.repeat(indentSize - signSpace);
